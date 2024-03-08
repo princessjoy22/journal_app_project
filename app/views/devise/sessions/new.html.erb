@@ -1,0 +1,34 @@
+<% if resource.errors.any? %>
+  <div class="flex justify-center bg-red-800"><%= render "devise/shared/error_messages", resource: resource %></div>
+<% end %>
+<div class="h-auto mx-auto my-auto">
+  <div class="flex-col items-center justify-center pt-8 shadow-2xl card card-compact w-96 bg-base-100">
+    <div class="mb-4">LOG IN</div>
+    <div class="flex-col items-center justify-center field">
+      <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+
+        <div class="mb-4 field">
+          <%= f.label :email, class:"label-text" %><br />
+          <%= f.email_field :email, autofocus: true, autocomplete: "email", class:"input input-bordered input-lg h-12"%>
+        </div>
+
+        <div class="mb-4 field">
+          <%= f.label :password, class:"label-text" %><br />
+          <%= f.password_field :password, autocomplete: "current-password", class:"input input-bordered input-lg h-12" %>
+        </div>
+
+        <% if devise_mapping.rememberable? %>
+          <div class="field">
+            <%= f.check_box :remember_me %>
+            <%= f.label :remember_me %>
+          </div>
+        <% end %>
+
+        <div class="mt-6 form-control">
+          <%= f.submit "Log in", class: "btn btn-outline btn-primary" %>
+          <%= render "devise/shared/links" %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>

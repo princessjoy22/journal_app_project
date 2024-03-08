@@ -1,0 +1,11 @@
+// FIXME: update css, error message, description(remove/hide)
+<% @tasks.each do |task| %>
+  <div>
+    <%= task.title %>
+    <%= task.description %>
+    <%= task.date %>
+    <%= link_to "View", category_task_path(category_id: task.category_id, id: task.id) %>
+    <%= link_to "Edit", edit_category_task_path(category_id: task.category_id, id: task.id) %>
+    <%= link_to "Delete", category_task_path(category_id: task.category_id, id: task.id), data: { turbo_method: :delete, turbo_confirm: 'Are you sure?' } %> 
+  </div>
+<% end %>

@@ -1,0 +1,35 @@
+<% if resource.errors.any? %>
+  <div class="flex justify-center bg-red-800"><%= render "devise/shared/error_messages", resource: resource %></div>
+<% end %>
+<div class="h-auto mx-auto my-auto">
+  <div class="flex-col items-center justify-center pt-8 shadow-2xl card card-compact w-96 bg-base-100">
+    <div class="mb-4">SIGN UP</div>
+    <div class="flex-col items-center justify-center field">
+      <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+      <div class="mb-4 field">
+        <%= f.label :email, class:"label-text" %><br />
+        <%= f.email_field :email, autofocus: true, autocomplete: "email", class:"input input-bordered input-lg h-12"%>
+      </div>
+
+      <div class="mb-4 field">
+        <%= f.label :password, class:"label-text" %>
+        <% if @minimum_password_length %>
+        <em>(<%= @minimum_password_length %> characters minimum)</em>
+        <% end %><br />
+        <%= f.password_field :password, autocomplete: "new-password", class:"input input-bordered justify-center input-lg h-12" %>
+      </div>
+
+      <div class="field">
+        <%= f.label :password_confirmation, class:"label-text" %><br />
+        <%= f.password_field :password_confirmation, autocomplete: "new-password", class:"input input-bordered input-lg h-12" %>
+      </div>
+
+      <div class="p-0 m-0 mt-6 form-control">
+        <%= f.submit "Sign up", class: "btn btn-outline btn-primary" %>
+        <%= render "devise/shared/links" %>
+      </div>
+      <% end %>
+    </div>
+  </div>
+</div>
+

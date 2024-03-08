@@ -1,0 +1,21 @@
+<div class="flex-none h-full bg-primary-content w-72">
+    <%= render "shared/sidebar" %>
+</div>
+<div class="overflow-hidden grow">
+    <% if notice.present? %>
+        <p class="bg-green-500 notice"><%= notice %></p>
+    <% end %>
+    <div class="flex items-center justify-center h-screen">
+        <% @tasks.each do |task| %>
+            <div>
+                <%= task.title %>
+                <%= task.description %>
+                <%= task.date %>
+                <%= link_to "View", category_task_path(category_id: task.category_id, id: task.id) %>
+                <%= link_to "Edit", edit_category_task_path(category_id: task.category_id, id: task.id) %>
+                <%= link_to "Delete", category_task_path(category_id: task.category_id, id: task.id), data: { turbo_method: :delete, turbo_confirm: 'Are you sure?' } %> 
+            </div>
+        <% end %>
+        <%= link_to "Back to task", category_path(@category) %>  
+    </div>
+</div>

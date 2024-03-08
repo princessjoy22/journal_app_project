@@ -1,0 +1,16 @@
+<div class="flex-none h-full bg-primary-content w-72">
+    <%= render "shared/sidebar" %>
+</div>
+<div class="overflow-hidden grow">
+    <% if notice.present? %>
+        <p class="bg-green-500 notice"><%= notice %></p>
+    <% end %>
+    <div class="flex items-center justify-center h-screen">
+        <div class="text-4xl font-bold">
+            Welcome to Journal App
+            // TODO: User Stories: task for today, mark task as done
+        </div> 
+    </div>
+</div>
+
+

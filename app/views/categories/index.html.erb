@@ -1,0 +1,24 @@
+<div class="flex-none h-full bg-primary-content w-72">
+    <%= render "shared/sidebar" %>
+</div>
+<div class="overflow-hidden grow">
+    <% if notice.present? %>
+        <p class="bg-green-500 notice"><%= notice %></p>
+    <% end %>
+    <div class="flex flex-row items-end justify-start w-full pl-12 bg-purple-800 h-36">
+        <div class="z-40 mb-4 text-5xl font-black text-white overflow">
+            Categories
+        </div>
+    </div>
+    <% if @categories.present? %>
+        <div class="flex w-full h-screen mx-12 my-10 overflow-y-auto text-2xl font-medium my-15" >
+            <div class="flex flex-wrap content-start">
+                <%= render "category_list" %>
+            </div>
+        <div>
+    <% else %>
+        <div class="flex items-center justify-center pt-10 text-2xl font-medium">
+            No category created
+        </div>
+    <% end %>
+</div>
