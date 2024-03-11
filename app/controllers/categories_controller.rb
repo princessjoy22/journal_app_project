@@ -1,5 +1,4 @@
 class CategoriesController < ApplicationController
-    before_action :authenticate_user!
     before_action :set_category, only: [:show, :edit, :update, :destroy]
 
     def index
@@ -7,12 +6,7 @@ class CategoriesController < ApplicationController
     end
 
     def show
-        @categories = current_user.categories
-        @category = Category.find(params[:id])
         @tasks = @category.tasks
-        unless @category.user == current_user
-            redirect to root_path, alert: "Category not found"
-        end
     end
 
     def new
@@ -54,9 +48,6 @@ class CategoriesController < ApplicationController
 
         def set_category
             @category = current_user.categories.find_by(id: params[:id])
-        end
-
-        def user_categories
         end
 
 end

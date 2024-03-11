@@ -4,6 +4,9 @@
         <div class="z-40 mb-4 text-5xl font-black text-purple overflow">
             Categories
         </div>
+        <div class="flex items-center justify-center w-24 h-8 m-4 text-white rounded-full bg-neutral md:hover:font-bold md:hover:h-10 md:hover:w-28">
+            <%= link_to "+ Category", new_category_path%>
+        </div>
     </div>
     <% if @categories.present? %>
         <div class="flex w-full h-screen mx-12 my-10 overflow-y-auto text-2xl font-medium my-15" >
@@ -12,7 +15,7 @@
             </div>
         <div>
     <% else %>
-        <div class="flex items-center justify-center pt-10 text-2xl font-medium">
+        <div class="flex justify-center pt-10 text-2xl font-medium">
             No category created
         </div>
     <% end %>

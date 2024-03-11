@@ -8,17 +8,17 @@
                     <%= @category.name %>
                 </div>
                 <div class="flex items-center justify-center w-24 h-8 m-4 text-white rounded-full bg-neutral md:hover:font-bold md:hover:h-10 md:hover:w-28">
-                    <%= link_to "+ Add Task", new_category_task_path(@category)%>
+                    <%= link_to "+ Task", new_category_task_path(@category)%>
                 </div>
             </div>
-            <% if @categories.present? %>
+            <% if @tasks.present? %>
                 <div class="flex w-full h-screen mx-12 my-10 overflow-y-auto text-xl font-medium my-15" >
                     <div class="flex flex-col items-center w-full pt-4 ml-4 h-4/6">
                         <%= render "tasks/task_list" %>
                     </div>
                 <div>
             <% else %>
-                <div class="flex items-center pt-10 text-2xl font-medium">
+                <div class="flex justify-center pt-10 text-2xl font-medium">
                     No task added
                 </div>
             <% end %>

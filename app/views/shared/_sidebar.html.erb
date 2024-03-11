@@ -13,8 +13,7 @@
                 <div class="ml-6">
                     <div class="text-lg font-bold text-white"><%= current_user.email %></div>
                     <div class="py-1 text-xs font-bold text-red-100">User</div>
-                    <%= button_to "Sign out", destroy_user_session_path, method: :delete, class: "link link-secondary text-base font-semibold text-red-200" %>
-                    
+                    <%= button_to "Sign out", destroy_user_session_path, method: :delete, class: "link link-secondary text-base font-semibold text-red-200" %>                   
                 </div>
             </div>
             <div class="flex justify-center w-full mt-16 mb-3">
@@ -25,11 +24,6 @@
             <div class="flex justify-center w-full mb-3">
                 <div class="flex items-center justify-center">
                     <%= link_to "My Categories", categories_path, class: "text-sm text-purple font-bold btn btn-outline btn-primary w-56 " %>
-                </div>
-            </div>
-            <div class="flex justify-center w-full">
-                <div class="flex items-center justify-center">
-                    <%= link_to "+ Add Category", new_category_path, class: "text-sm text-purple font-bold btn btn-outline btn-primary w-56 " %>
                 </div>
             </div>
         </div>
