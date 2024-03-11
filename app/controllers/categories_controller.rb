@@ -20,7 +20,6 @@ class CategoriesController < ApplicationController
     end
 
     def edit
-        @categories = current_user.categories
     end
 
     def create
@@ -56,4 +55,8 @@ class CategoriesController < ApplicationController
         def set_category
             @category = current_user.categories.find_by(id: params[:id])
         end
+
+        def user_categories
+        end
+
 end

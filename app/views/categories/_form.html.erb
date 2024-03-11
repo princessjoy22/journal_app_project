@@ -12,13 +12,13 @@
   <% end %>
 
   <div>
-    <div class="py-2 font-medium text-black">
+    <div class="py-2 font-medium text-neutral">
       <%= form.label :name %>
     </div>
-    <div><%= form.text_field :name, id: :category_name, class: "rounded h-10 w-52 pl-2"%></div>
+    <div><%= form.text_field :name, id: :category_name, class: "rounded h-10 w-52 pl-2 focus:outline-none focus:ring focus:border-red-800"%></div>
   </div>
 
   <div class="py-6">
-    <div class="text-center text-black"><%= form.submit "Create", class: "w-52 h-10 rounded bg-purple-700 btn btn-outline" %></div>
+    <div class="text-center text-white"><%= form.submit "Create", class: "w-52 h-10 rounded bg-neutral btn btn-outline" %></div>
   </div>
 <% end %>

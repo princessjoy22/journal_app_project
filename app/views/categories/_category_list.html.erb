@@ -1,14 +1,14 @@
 <% @categories.each do |category| %>
-  <div class="w-56 h-32 m-4 text-center text-black">
-    <div class="py-4 bg-purple-300 rounded-t">
-      <%= link_to category.name, category_path(category), class: "md:hover:underline md:hover:font-bold md:hover:text-purple-500" %>
+  <div class="w-56 h-32 m-4 text-center border-solid text-neutral">
+    <div class="py-4 bg-pink-200 rounded-t">
+      <%= link_to category.name, category_path(category), class: "md:hover:underline md:hover:font-bold md:hover:text-white" %>
     </div>
-    <div class="flex items-end py-4 text-sm bg-purple-700 rounded-b justify-evenly">
+    <div class="flex items-end py-4 text-sm text-white rounded-b justify-evenly bg-base-content">
       <div class="w-1/2">
-        <%= link_to "EDIT", edit_category_path(category), class: "md:hover:text-base md:hover:font-bold md:hover:text-green-300" %>
+        <%= link_to "EDIT", edit_category_path(category), class: "md:hover:text-base md:hover:font-bold" %>
       </div>
       <div class="w-1/2">
-        <%= link_to "DELETE", category_path(category), data: { turbo_method: :delete, turbo_confirm: 'Are you sure?' }, class: "md:hover:text-base md:hover:font-bold md:hover:text-pink-400"  %>  
+        <%= link_to "DELETE", category_path(category), data: { turbo_method: :delete, turbo_confirm: 'Are you sure?' }, class: "md:hover:text-base md:hover:font-bold"  %>  
       </div>
     </div>
   </div>
