@@ -8,18 +8,20 @@
             <div class="flex justify-end pr-8 text-base">
                 <%= @task.date %>
             </div>
-            <div>
-                <div class="pb-8 text-2xl font-bold">
-                    <%= @task.title %>
+            <div class="">
+                <div>
+                    <div class="pb-8 text-2xl font-bold">
+                        <%= @task.title %>
+                    </div>
+                    <div class="pb-4 text-xl">
+                        <%= @task.description %>
+                    </div>
                 </div>
-                <div class="pb-4 text-xl">
-                    <%= @task.description %>
+                <div>
+                    <div class="text-center">
+                        <%= link_to "<< Back to task", category_path(@category) %>
+                    </div> 
                 </div>
-            </div>
-            <div>
-                <div class="text-center">
-                    <%= link_to "<< Back to task", category_path(@category) %>
-                </div> 
             </div>
         </div>  
     </div>
