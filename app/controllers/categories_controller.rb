@@ -7,6 +7,7 @@ class CategoriesController < ApplicationController
 
     def show
         @tasks = @category.tasks
+        @task_due_today = @tasks.where(date: Date.today)
     end
 
     def new

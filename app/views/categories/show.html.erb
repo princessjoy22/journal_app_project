@@ -11,17 +11,20 @@
                     <%= link_to "+ Task", new_category_task_path(@category)%>
                 </div>
             </div>
-            <% if @tasks.present? %>
                 <div class="flex w-full h-screen mx-12 my-10 overflow-y-auto text-xl font-medium my-15" >
-                    <div class="flex flex-col items-center w-full pt-4 ml-4 h-4/6">
-                        <%= render "tasks/task_list" %>
+                    <div class="flex flex-col items-center w-full pt-4 ml-4 h-2/3">
+                    <% if @tasks.present? %>
+                        <%= render "shared/task_list" %>
+                    <% else %>
+                        <div class="flex justify-center pt-10 text-2xl font-medium">
+                            No task added
+                        </div>
+                    <% end %>
                     </div>
-                <div>
-            <% else %>
-                <div class="flex justify-center pt-10 text-2xl font-medium">
-                    No task added
-                </div>
-            <% end %>
+                    <div class="flex flex-col items-center w-full pt-4 ml-4 h-2/3">
+                        <%= render "shared/task_today" %>
+                    </div>
+                <div>         
         </div> 
     </div>
 </div>

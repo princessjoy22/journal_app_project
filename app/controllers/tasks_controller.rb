@@ -1,9 +1,10 @@
 class TasksController < ApplicationController
     before_action :set_category, only: [:index, :create, :new]
-    before_action :set_task, only: [:show, :edit, :update, :destroy]
+    before_action :set_task, only: [:show, :index, :edit, :update, :destroy]
 
     def index
         @tasks = @category.tasks
+        @task_due_today = @category.tasks.where(date: Date.today)
     end
 
     def show
@@ -22,7 +23,7 @@ class TasksController < ApplicationController
         if @task.save
             redirect_to category_path(@category), notice: "Task was successfully created."
         else
-            render :new
+            render :new, status: :unprocessable_entity
         end
     end
 

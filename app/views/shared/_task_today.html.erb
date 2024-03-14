@@ -1,0 +1,17 @@
+<div class="overflow-y-auto border-2 rounded w-96 border-neutral h-3/4 bg-neutral">
+<% tasks_due_today = Task.where(date: Date.today) %>
+    <% if tasks_due_today.present? %>
+        <div>
+            <div class="py-2 text-center text-white">Due today</div>
+            <% tasks_due_today.each do |task| %>
+                <div class="px-4 py-2 m-3 bg-pink-200 rounded"><%= link_to task.title, category_task_path(category_id: task.category_id, id: task.id) %></div>
+            <% end %>
+        </div>
+    <% else %>
+        <div class="flex items-center justify-center h-full text-white">No task due today.</div>
+<% end %>
+</div>
+
+
+
+

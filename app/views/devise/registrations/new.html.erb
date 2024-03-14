@@ -1,7 +1,7 @@
-<% if resource.errors.any? %>
-  <div class="flex justify-center bg-red-800"><%= render "devise/shared/error_messages", resource: resource %></div>
-<% end %>
 <div class="h-auto mx-auto my-auto">
+  <% if resource.errors.any? %>
+    <div class="flex justify-center text-white bg-neutral"><%= render "devise/shared/error_messages", resource: resource %></div>
+  <% end %>
   <div class="flex-col items-center justify-center pt-8 shadow-2xl card card-compact w-96 bg-base-100">
     <div class="mb-4">SIGN UP</div>
     <div class="flex-col items-center justify-center field">
