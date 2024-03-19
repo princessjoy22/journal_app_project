@@ -1,14 +1,14 @@
-JOURNAL APP
+**JOURNAL APP**
 
 This Journal App is a web application made with Ruby on Rails. It helps users organize tasks and keep track of their activities.
 
-Key Features:
+**Key Features:**
 
 - User authentication powered by Devise
 - Ability to create tasks within designated categories
 - Utilizes Tailwind CSS and DaisyUI for sleek design
 
-**Getting Started**
+**GETTING STARTED**
 
 **Prerequisites**
 
@@ -18,14 +18,14 @@ Key Features:
 
 **Installation**
 
-1. Clone the repository:
+1. Clone repository:
 
    ```
    https://github.com/princessjoy22/journal_app_project.git
 
    ```
 
-2. Navigate to the project directory:
+2. Navigate project directory:
 
    ```
    cd journal_app_project
